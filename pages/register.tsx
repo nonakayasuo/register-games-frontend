@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
+import { Form, Input, Button, DatePicker } from 'antd'
 
 interface Game {
   game_id: number
@@ -39,9 +40,11 @@ const AddGamePage = () => {
             }
           />
         </div>
-        <button type="submit">登録する</button>
+        <Button type="primary" htmlType="submit">
+          登録する
+        </Button>
         <br />
-        <button onClick={() => router.push('/')}>トップ画面に戻る</button>
+        <Button onClick={() => router.push('/')}>トップ画面に戻る</Button>
       </form>
     </div>
   )

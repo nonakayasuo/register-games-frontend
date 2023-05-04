@@ -62,15 +62,6 @@ const AddReviewPage = () => {
           },
         },
       )
-      console.log('データの中身', res.data)
-      if ('error' in res.data) {
-        console.log(res.data.error)
-        // エラーを処理するコードを追加する
-      } else {
-        console.log(res.data)
-        form.resetFields()
-        router.push('/')
-      }
       console.log(res)
       form.resetFields()
       router.push('/')
