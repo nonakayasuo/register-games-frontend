@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { Table } from 'antd'
 import axios from 'axios'
+import Link from 'next/link'
 
 interface Game {
   game_id: number
@@ -25,24 +27,20 @@ const GameList = () => {
     fetchGameList()
   }, [])
 
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>タイトル</th>
-        </tr>
-      </thead>
-      <tbody>
-        {games.map(game => (
-          <tr key={game.game_id}>
-            <td>{game.game_id}</td>
-            <td>{game.game_name}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )
+  // テーブルのカラム設定
+  const columns = [
+    {
+      title: 'ゲームタイトル',
+      dataIndex: 'game_name',
+      key: 'game_name',
+      // レコードをクリックしたら、/reviews/:idに遷移するように設定する
+      render: (text: string, record: Game) => (
+        <Link href={`/${record.game_id}`}>{text}</Link>
+      ),
+    },
+  ]
+
+  return <Table dataSource={games} columns={columns} />
 }
 
 export default GameList

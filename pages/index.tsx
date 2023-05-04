@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { Button } from 'antd'
 import GameList from './GameList'
 
 const IndexPage = () => {
@@ -8,11 +9,7 @@ const IndexPage = () => {
     <div>
       <h1>ゲームサガ</h1>
       <GameList />
-      <button onClick={() => router.push('/add_game')}>ゲームを登録する</button>
-      <br />
-      <button onClick={() => router.push('/add_review')}>
-        ゲームのレビューをする
-      </button>
+      <Button onClick={() => router.push('/register')}>ゲームを登録する</Button>
     </div>
   )
 }
