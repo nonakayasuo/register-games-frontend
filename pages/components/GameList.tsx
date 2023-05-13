@@ -33,14 +33,14 @@ const GameList = () => {
       title: 'ゲームタイトル',
       dataIndex: 'game_name',
       key: 'game_name',
-      // レコードをクリックしたら、/reviews/:idに遷移するように設定する
+      // レコードをクリックしたら、/review/:idに遷移するように設定する
       render: (text: string, record: Game) => (
-        <Link href={`/${record.game_id}`}>{text}</Link>
+        <Link href={`/review/${record.game_id}`}>{text}</Link>
       ),
     },
   ]
 
-  return <Table dataSource={games} columns={columns} />
+  return <Table dataSource={games} columns={columns} rowKey="game_id" />
 }
 
 export default GameList

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { Button } from 'antd'
-import GameList from './GameList'
+import GameList from './components/GameList'
 
 const IndexPage = () => {
   const router = useRouter()

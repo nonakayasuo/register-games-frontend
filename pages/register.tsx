@@ -9,7 +9,7 @@ interface Game {
 }
 
 const AddGamePage = () => {
-  const [newGame, setNewGame] = useState<Game>({ game_id: 0, game_name: '' })
+  const [newGame, setNewGame] = useState<Game>({ game_id: 1, game_name: '' })
   const router = useRouter()
 
   // フォームの送信時に新しいゲームを登録する関数
